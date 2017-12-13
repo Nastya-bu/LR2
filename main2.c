@@ -8,10 +8,10 @@ int main ()
 {
 	setlocale(LC_ALL,"Russian");
   
-   int i=0,n=2; //Определяем необходимые переменные
+   int i=0,n=2; 
    
  char *str = (char*) malloc (n*sizeof(char));
-   printf ("Введите текст для шифрования: ");
+   printf ("Р’РІРµРґРёС‚Рµ С‚РµРєСЃС‚ РґР»СЏ С€РёС„СЂРѕРІР°РЅРёСЏ: ");
    
     str[i]=getchar();
    while (str[i] != '\n'){
@@ -25,26 +25,26 @@ n--;
 str = (char*) realloc (str, sizeof(char)*n);
    
 
-   char *key = (char*) malloc (n*sizeof(char));  //массив для ключа
+   char *key = (char*) malloc (n*sizeof(char));  //РјР°СЃСЃРёРІ РґР»СЏ РєР»СЋС‡Р°
 
-   char *sh = (char*) malloc (n*sizeof(char));  //массив зашифрованного текста
+   char *sh = (char*) malloc (n*sizeof(char));  //РјР°СЃСЃРёРІ Р·Р°С€РёС„СЂРѕРІР°РЅРЅРѕРіРѕ С‚РµРєСЃС‚Р°
    
-   char *dec = (char*) malloc (n*sizeof(char)); //массив дешифрованного текста
+   char *dec = (char*) malloc (n*sizeof(char)); //РјР°СЃСЃРёРІ РґРµС€РёС„СЂРѕРІР°РЅРЅРѕРіРѕ С‚РµРєСЃС‚Р°
 
 
-// определяем ключ случайным образом
+// РѕРїСЂРµРґРµР»РµРЅРёРµ РєР»СЋС‡Р°
 
    for(i = 0; i < n; i++)
 
       key[i]=(char)rand()%255;
 
-// шифрование
+// С€РёС„РѕРІР°РЅРёРµ
 
    for(i = 0; i < n; i++)
 
       sh[i]=str[i]^key[i];
       
-// дешифрование
+// РґРµС€РёС„СЂРѕРІР°РЅРёРµ
       
     for(i = 0; i < n; i++)
 
@@ -52,13 +52,13 @@ str = (char*) realloc (str, sizeof(char)*n);
 
 
 
-    printf("\nОткрытый текст: %s", str);
+    printf("\nРћС‚РєСЂС‹С‚С‹Р№ С‚РµРєСЃС‚: %s", str);
    
-    printf("\nКлюч: %s", key);
+    printf("\nРљР»СЋС‡: %s", key);
 
-    printf("\nЗашифрованный текст: %s", sh);
+    printf("\nР—Р°С€РёС„СЂРѕРІР°РЅРЅС‹Р№ С‚РµРєСЃС‚: %s", sh);
    
-	printf("\nДешифрованный текст: %s \n", dec);
+	printf("\nР”РµС€РёС„СЂРѕРІР°РЅРЅС‹Р№ С‚РµРєСЃС‚: %s \n", dec);
     
    system("pause");
    
